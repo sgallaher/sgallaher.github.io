@@ -3,7 +3,8 @@ from flask import Flask,redirect,render_template, request, session
 from flask_session import Session
 from flask import jsonify
 
-
+def getApp():
+    return app
 def create_connection(db_file):
     """ create a database connection to a SQLite database """
     conn = None
