@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="menu">
+  <form method="post">
+  <label for="class">Select a class:</label>
+
+    <select name="classcode" id="classcode">
+      {% if session['classcode'] %}
+        <option value="{{ session['classcode'] }}">Selected: {{ session['classcode'] }}</option>
+
+      {% endif %}
+      {% for c in classes %}
+        <option value="{{ c[0] }}">{{ c[0] }}</option>
+      {% endfor %}
+    </select><input type="submit">
+  </form>
+</div>
+<div class = "title">
+  <h1>Seating plan for {{ details[0][3] }}</h1>
+  <h2>C15 - Computer Science / BTEC IT</h2>
+</div>
+
+
+
+
+{% for n in range(30) %}
+    <div class="seat{{ n+1 }}">
+      <div class="box">
+
+        <p> {{ n+ 1 }}. <span class="first">{{ details[n][2] }} </span>{{ details[n][1] }}</p>
+      </div>
+    </div>
+{% endfor %}
+
+
+
+{% endblock %}

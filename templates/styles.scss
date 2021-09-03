@@ -1,0 +1,14 @@
+// numbers
+$numbers : 1 2 3 4;
+
+// loop!
+
+// loop!
+@each $number in $numbers {
+  .#{$number} {
+    position: absolute;
+    left: 0px;
+    top: 0+(number*30)px;
+    z-index: -1;
+  }
+}
